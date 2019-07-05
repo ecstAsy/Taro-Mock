@@ -67,7 +67,7 @@ npm run mock
 
 ### H5请求跨域问题
 
-.config/dev.js
+config/dev.js
 ```
 const isH5 = process.env.CLIENT_ENV === 'h5'
 // 你自己的请求域名
@@ -96,9 +96,64 @@ module.exports = {
     }
   }
 }
-
+```
+src/http/Request.js
 
 ```
+import Taro from '@tarojs/taro';
+import { baseUrl, noConsole } from './config';
+
+/**
+|--------------------------------------------------
+| @Taro.getEnv
+| 获取当前开发环境是 （WEB: H5 WEAPP: 小程序 APPLY: 支付宝）
+| @特别注意
+| 小程序端不会出现跨域问题，H5端则会出现跨域问题
+| H5设置代理以后，一定要在请求的地方把路径写完全
+| 小程序端则不需要，只要按照原来请求地址即可
+|--------------------------------------------------
+*/
+
+export default (options = { method: 'GET', data: {} }) => {
+  // 根据不同的环境来补全请求地址
+  let Url = ''
+  if (Taro.getEnv() === 'WEB') {
+    Url = `/${options.url}`
+  } else {
+    Url = `${baseUrl}${options.url}`
+  }
+  return Taro.request({
+    url: Url,
+    data: {
+      ...options.data
+    },
+    header: {
+      'Content-Type': 'application/json'
+    },
+    method: options.method.toUpperCase(),
+  }).then((res) => {
+    const { statusCode, data } = res;
+    console.log(res)
+    if (statusCode >= 200 && statusCode < 300) {
+      if (!noConsole) {
+        console.log(`${new Date().toLocaleString()}【 M=${Url} 】【接口响应：】`, res.data);
+      }
+      if (data.statusCode !== '200') {
+        Taro.showToast({
+          title: `网络错误！`,
+          icon: 'none',
+          mask: true,
+        });
+      }
+      return data;
+    } else {
+      throw new Error(`网络请求错误，状态码${statusCode}`);
+    }
+  })
+}
+
+```
+
 
 # 文档
 
