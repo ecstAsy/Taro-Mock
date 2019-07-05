@@ -1,0 +1,81 @@
+/* background-color
+-------------------------- */
+$bg-color-base: #f6f6f6 !default;
+
+/* font-color
+-------------------------- */
+$font-color-regular: #333333 !default;
+$font-color-toast: #888888 !default;
+$font-color-gray: #939ba4 !default;
+$font-color-action: #d92638 !default;
+$font-color-warn: #fe8000 !default;
+
+/* font-family
+-------------------------- */
+$font-regular: PingFangSC-Regular !default;
+$font-medium: PingFangSC-Medium !default;
+$font-bold: PingFangSC-Semibold !default;
+
+/* methods
+-------------------------- */
+// 背景图片地址和大小
+@mixin bg($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+// 定位上下左右居中
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 定位上下居中
+@mixin ct {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// 定位左右居中
+@mixin cl {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// 宽高
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// 字体大小，颜色
+@mixin sc($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+
+// 高度，行高 相等
+@mixin hl($height) {
+  height: $height;
+  line-height: $height;
+}
+
+// flex 布局和 子元素 对其方式
+@mixin fj($type: space-between) {
+  display: flex;
+  justify-content: $type;
+}
+
+// 省略标记
+@mixin ellipse($line: 1) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}

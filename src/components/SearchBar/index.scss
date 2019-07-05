@@ -1,0 +1,38 @@
+.top-search {
+  width: 90%;
+  height: 70px;
+  padding: 10px 5%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  .top-search-content {
+    display: flex;
+    flex-direction: row;
+    background: #eee;
+    border-radius: 35px;
+    overflow: hidden;
+    .top-search-icon {
+      flex: 1.5;
+      text-align: center;
+      icon {
+        margin: 15px auto;
+      }
+    }
+    .top-search-input {
+      flex: 8;
+      input {
+        height: 70px;
+        font-size: 32px;
+        color: #333;
+      }
+    }
+    .top-search-close {
+      flex: 1;
+      text-align: center;
+      icon {
+        margin: 15px auto;
+      }
+    }
+  }
+}

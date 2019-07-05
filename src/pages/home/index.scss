@@ -1,0 +1,12 @@
+@import "../../styles/mixin";
+
+.home-page {
+  .page-white-space {
+    height: 110px;
+  }
+  .auth-modal-txt {
+    width: 80%;
+    margin: 0 auto;
+    @include sc(30px, $font-color-regular);
+  }
+}
