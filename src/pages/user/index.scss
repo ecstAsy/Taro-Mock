@@ -1,0 +1,46 @@
+@import "../../styles/mixin.scss";
+.page-user {
+  .user-info {
+    @include wh(100%, 200px);
+    padding: 20px 0;
+    .user-info-avator {
+      @include wh(120px, 120px);
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+      open-data {
+        @include wh(100%, 100%);
+      }
+    }
+    .user-info-edit {
+      width: 100%;
+      text-align: center;
+      @include sc(26px, $font-color-gray);
+      margin-top: 25px;
+    }
+  }
+  .PageItem-content {
+    @include hl(50px);
+    @include sc(26px, $font-color-regular);
+    Text,
+    span {
+      @include sc(30px, $font-color-regular);
+    }
+  }
+  .PageItem-toast {
+    @include hl(30px);
+    @include sc(26px, $font-color-toast);
+  }
+  .PageItem-text {
+    @include hl(80px);
+    @include sc(26px, $font-color-toast);
+  }
+  .PageItem-single {
+    @include hl(80px);
+    @include sc(26px, $font-color-regular);
+    Text,
+    span {
+      @include sc(30px, $font-color-regular);
+    }
+  }
+}

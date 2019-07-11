@@ -1,0 +1,25 @@
+@import "../../styles/mixin.scss";
+
+.page-book {
+  @include wh(150px, 300px);
+  display: inline-block;
+  margin-bottom: 25px;
+  margin-left: 75px;
+  vertical-align: top;
+  .page-book-img {
+    @include wh(150px, 210px);
+    border: 1px solid #ccc;
+    box-shadow: 0 5px 8px 0 rgba(163, 166, 170, 0.3);
+    image,
+    .taro-img {
+      @include wh(100%, 100%);
+    }
+  }
+  .page-book-name {
+    height: 80px;
+    margin-top: 10px;
+    @include sc(26px, $font-color-regular);
+    text-align: left;
+    @include ellipse(2);
+  }
+}

@@ -1,0 +1,117 @@
+@import "../../styles/base.scss";
+@import "../../styles/mixin.scss";
+.user-comments {
+  width: 690px;
+  padding: 30px;
+  background: #fff;
+  .user-comments-header {
+    @include wh(100%, 50px);
+    line-height: 50px;
+    .comments-avator {
+      float: left;
+      @include wh(50px, 50px);
+      .taro-img,
+      image {
+        @include wh(50px, 50px);
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+    .comments-name {
+      float: left;
+      @include wh(220px, 50px);
+      margin-left: 20px;
+      @include sc(24px, $font-color-regular);
+      vertical-align: middle;
+    }
+    .comments-time {
+      float: right;
+      text-align: right;
+      @include wh(400px, 50px);
+      @include sc(24px, $font-color-toast);
+      vertical-align: middle;
+    }
+  }
+  .user-comments-content {
+    width: 620px;
+    margin-left: 70px;
+    .content-comments {
+      width: 100%;
+      line-height: 35px;
+      @include sc(26px, $font-color-regular);
+      margin: 20px 0 30px;
+    }
+    .content-book-info {
+      width: 560px;
+      background: #eee;
+      border-radius: 16px;
+      padding: 30px;
+      .book-intro {
+        @include sc(24px, $font-color-regular);
+        @include ellipse(2);
+        height: 70px;
+        line-height: 35px;
+      }
+      .book-info {
+        @include wh(100%, 140px);
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #ccc;
+        .book-info-img {
+          @include wh(100px, 140px);
+          float: left;
+          .taro-img,
+          image {
+            @include wh(100%, 100%);
+          }
+        }
+        .book-info-auther {
+          @include wh(400px, 100px);
+          padding: 20px;
+          float: left;
+          Text,
+          span {
+            display: block;
+            line-height: 50px;
+            &:first-of-type {
+              @include sc(26px, $font-color-regular);
+            }
+            &:last-of-type {
+              @include sc(24px, $font-color-regular);
+            }
+          }
+        }
+      }
+    }
+  }
+  .user-comments-footer {
+    @include wh(580px, 40px);
+    margin-left: 70px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: row;
+    .share,
+    .star,
+    .info {
+      .taro-img,
+      image {
+        @include wh(40px, 40px);
+      }
+      .taro-img {
+        vertical-align: top;
+      }
+    }
+    .share {
+      flex: 1;
+      text-align: left;
+    }
+    .star {
+      flex: 1;
+      text-align: center;
+    }
+    .info {
+      flex: 1;
+      text-align: right;
+    }
+  }
+}

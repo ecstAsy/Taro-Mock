@@ -1,0 +1,81 @@
+@import "../../styles/base.scss";
+@import "../../styles/mixin.scss";
+
+.book-sift {
+  width: 690px;
+  margin: 0 auto;
+  border-bottom: 1px solid #eee;
+  .book-sift-header-system {
+    .book-sift-intro {
+      @include wh(500px, 120px);
+      padding: 15px 0;
+      @include ellipse(3);
+      line-height: 40px;
+      @include sc(26px, $font-color-regular);
+      display: inline-block;
+    }
+    .book-sift-img {
+      @include wh(150px, 150px);
+      display: inline-block;
+      border-radius: 16px;
+      overflow: hidden;
+      .taro-img,
+      image {
+        @include wh(100%, 100%);
+      }
+    }
+  }
+  .book-sift-header-case {
+    .book-case-title {
+      @include hl(70px);
+      @include sc(26px, $font-color-regular);
+    }
+    .book-case-content {
+      width: 630px;
+      padding: 30px;
+      background: #deeff0;
+      border-radius: 16px;
+      .book-case-content-intro {
+        @include wh(500px, 120px);
+        line-height: 40px;
+        @include ellipse(3);
+        @include sc(24px, $font-color-regular);
+        display: inline-block;
+      }
+      .book-case-content-img {
+        @include wh(100px, 100px);
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 30px;
+        border-radius: 16px;
+        overflow: hidden;
+        .taro-img,
+        image {
+          @include wh(100%, 100%);
+        }
+      }
+    }
+  }
+  .book-sift-footer {
+    @include wh(100%, 90px);
+    line-height: 90px;
+    display: flex;
+    flex-direction: row;
+    .book-sift-from {
+      flex: 1;
+      @include sc(24px, $font-color-toast);
+    }
+    .book-sift-star {
+      flex: 1;
+      text-align: right;
+      .taro-img,
+      image {
+        @include wh(45px, 45px);
+      }
+      Text,
+      span {
+        @include sc(24px, $font-color-toast);
+      }
+    }
+  }
+}

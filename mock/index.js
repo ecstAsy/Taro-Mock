@@ -34,13 +34,13 @@ const Query = (options, dataSource) => {
 const data = {
   'GET /api/user': {
     data: {
-      id: 1,
-      username: 'kenny',
-      sex: 6
+      userId: 1,
+      userName: 'Lily',
+      userSex: 6
     },
     statusCode: '200'
   },
-  'GET /api/hi': (req, res) => {
+  'GET /api/swiper': (req, res) => {
     res.json(
       {
         id: 1,

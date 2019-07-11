@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "taro-canvas-demo",
-  "description": "taro-canvas-demo",
+  "projectname": "taro-mock-demo",
+  "description": "taro-mock-demo",
   "appid": "wxea4b389beea2ea5a",
   "setting": {
     "urlCheck": true,

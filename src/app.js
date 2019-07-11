@@ -23,13 +23,45 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/home/index'
+      'pages/home/index',        // 首页
+      'pages/bookcase/index',    // 书架
+      'pages/dynamic/index',     // 动态
+      'pages/user/index',        // 用户
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      list: [
+        {
+          pagePath: "pages/home/index",
+          text: "发现",
+          iconPath: "./images/tab/home.png",
+          selectedIconPath: "./images/tab/home_active.png",
+        }, {
+          pagePath: "pages/bookcase/index",
+          text: "书架",
+          iconPath: "./images/tab/bookcase.png",
+          selectedIconPath: "./images/tab/bookcase_active.png",
+        }, {
+          pagePath: "pages/dynamic/index",
+          text: "动态",
+          iconPath: "./images/tab/dynamic.png",
+          selectedIconPath: "./images/tab/dynamic_active.png",
+        }, {
+          pagePath: "pages/user/index",
+          text: "我的",
+          iconPath: "./images/tab/user.png",
+          selectedIconPath: "./images/tab/user_active.png",
+        }
+      ],
+      color: '#707070',
+      selectedColor: '#3288FE',
+      backgroundColor: '#fff',
+      borderStyle: 'black'
     }
   }
 

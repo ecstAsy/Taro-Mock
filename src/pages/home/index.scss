@@ -1,12 +1,24 @@
 @import "../../styles/mixin";
 
 .home-page {
-  .page-white-space {
-    height: 110px;
-  }
+  border-top: 1px solid #fff;
   .auth-modal-txt {
     width: 80%;
     margin: 0 auto;
     @include sc(30px, $font-color-regular);
+  }
+  .home-page-swiper {
+    width: 100%;
+    .Swiper {
+      @include wh(100%, 100%);
+      .SwiperItem {
+        @include wh(100%, 100%);
+        .taro-img,
+        image {
+          @include wh(90%, 90%);
+          margin: 5% 5%;
+        }
+      }
+    }
   }
 }

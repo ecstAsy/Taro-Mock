@@ -5,7 +5,6 @@
 |--------------------------------------------------
 */
 
-const delay = require('mocker-api/utils/delay');
 const Mock = require('mockjs');
 
 const Random = Mock.Random;
@@ -86,6 +85,7 @@ const data = Mock.mock({
   'lists|80-100': [
     {
       id: "@increment",
+      "userId|+1": [1, 2, 3, 4],
       "title|+1": titles,
       isbn: "@natural(9781782910284, 9981782910284)",
       publisher: "上海人民出版社",

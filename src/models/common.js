@@ -12,14 +12,7 @@ export default {
   namespace: 'common',
   state: {
     SystemInfo: getSystemInfo(),
-    userId: '',
-    ImageHttp: 'https://www.caryoud.com/images/',    // 图片路径前缀
-    RegPhone: /^1(3|4|5|7|8|9)\d{9}$/,               // 手机号正则匹配
-    TagInfo: '',
-    messageNotice: false,
-    messsNum: '0',
-    USERINFO: '',         // 用户通用信息
-    chatPage: false,
+    UserInfo: ''
   },
 
   effects: {

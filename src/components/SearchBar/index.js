@@ -28,7 +28,7 @@ const SearchBar = ({ value, disabled, onClick, onChange, onClear, onConfirm }) =
           <Input
             disabled={disabled}
             value={value}
-            placeholder='搜索保险产品或保险公司名称'
+            placeholder='搜索'
             type='text'
             confirmType='search'
             onInput={e => onChange(e)}

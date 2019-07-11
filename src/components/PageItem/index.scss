@@ -1,0 +1,27 @@
+@import "../../styles/mixin.scss";
+
+.page-item {
+  width: 690px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  .page-item-left {
+    flex: 4;
+    .taro-img,
+    image {
+      @include wh(35px, 35px);
+      vertical-align: middle;
+    }
+    Text,
+    span {
+      @include sc(30px, $font-color-regular);
+      vertical-align: middle;
+      margin-left: 15px;
+    }
+  }
+  .page-item-right {
+    flex: 6;
+    text-align: right;
+  }
+}

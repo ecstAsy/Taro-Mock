@@ -1,5 +1,5 @@
 const isH5 = process.env.CLIENT_ENV === 'h5'
-const HOST = '"http://192.168.18.105:3721"'; // 你自己的请求域名
+const HOST = '"http://192.168.18.104:3721"'; // 你自己的请求域名
 
 module.exports = {
   env: {

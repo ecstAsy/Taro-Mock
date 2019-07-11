@@ -1,7 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View } from '@tarojs/components'
+import { View, Swiper, SwiperItem, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-import { SearchBar, PageModal } from '../../components';
+import { PageModal, PageSpace, SearchBar } from '../../components';
 import './index.scss'
 
 
@@ -10,7 +10,7 @@ import './index.scss'
 class Home extends Component {
 
   config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: '发现'
   }
 
   componentDidMount = () => {
@@ -34,15 +34,27 @@ class Home extends Component {
       })
       return
     }
-    console.log(`UserInfo:`, UserInfo)
-    const books = await this.props.dispatch({
+    const Books = await this.props.dispatch({
       type: 'home/list',
       payload: {
         current: 1,
         pageSize: 10
       }
     })
-    console.log(`books:`, books)
+    await Promise.all([
+      this.props.dispatch({
+        type: 'common/save',
+        payload: {
+          UserInfo
+        }
+      }),
+      this.props.dispatch({
+        type: 'home/save',
+        payload: {
+          Books
+        }
+      })
+    ])
   }
   handleChange = e => {
     e.stopPropagation();
@@ -76,17 +88,17 @@ class Home extends Component {
       }
     })
   }
+
+  handleTouchMove = () => {
+
+  }
+
+
   render() {
-    const { SearchInfo, AuthModalVisible } = this.props;
+    const { AuthModalVisible, SystemInfo, Banners } = this.props;
+    console.log(SystemInfo)
     return (
-      <View className='home-page'>
-        <SearchBar
-          value={SearchInfo}
-          onChange={this.handleChange}
-          onClear={this.handleClear}
-          onConfirm={this.handleConfirm}
-        />
-        <View className='page-white-space' />
+      <View className='home-page' onTouchMove={this.handleTouchMove}>
         <PageModal
           title='温馨提示'
           modalType='auth'
@@ -99,6 +111,23 @@ class Home extends Component {
             需要您本人授权,才能方便为您提供更好的服务！
           </View>
         </PageModal>
+
+        <SearchBar />
+
+        <PageSpace Height={50} BgColor='#FFF' />
+
+        <View className='home-page-swiper' style={{ height: `${SystemInfo.windowHeight * 0.75}px` }}>
+          <Swiper className='Swiper' nextMargin='30px' previousMargin='30px'>
+            {
+              Banners.map(item =>
+                <SwiperItem key={item} className='SwiperItem'>
+                  <Image src={item} />
+                </SwiperItem>
+              )
+            }
+          </Swiper>
+        </View>
+
       </View >
     )
   }

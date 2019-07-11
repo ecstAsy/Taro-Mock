@@ -1,0 +1,50 @@
+@import "../../styles/mixin.scss";
+@import "../../styles/base.scss";
+.book-list {
+  width: 690px;
+  padding: 30px;
+  background: #fff;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  .book-list-img {
+    flex: 3;
+    image {
+      width: 90%;
+      height: 200px;
+    }
+  }
+  .book-list-info {
+    flex: 7;
+    View {
+      &.info-title {
+        font-size: 32px;
+        color: $font-color-regular;
+      }
+      &.info-author {
+        Text {
+          display: inline-block;
+          @include sc(28px, $font-color-regular);
+          &:first-of-type {
+            margin-right: 30px;
+          }
+        }
+      }
+      &.info-tag {
+        Text {
+          display: inline-block;
+          margin-right: 10px;
+          padding: 0 2px;
+          border: 1px solid $font-color-action;
+          border-radius: 4px;
+          @include sc(26px, $font-color-action);
+        }
+      }
+      &.info-intro {
+        @include ellipse(2);
+        @include sc(28px, $font-color-gray);
+        text-indent: 30px;
+      }
+    }
+  }
+}
