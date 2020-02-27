@@ -1,8 +1,8 @@
-# 技术栈
+# ==技术栈==
 
 React + Taro + Dva + Sass + ES6/ES7 + Mockjs
 
-## 项目运行
+## ==项目运行==
 
 ```
 # 全局安装taro脚手架
@@ -23,13 +23,13 @@ npm run mock
 
 ```
 
-## 适配进度
+## ==适配进度==
 
 - [x] 微信小程序 -- 完美适配
 - [x] H5 -- 完美适配
 
 
-# 业务介绍
+# ==业务介绍==
 
 目录结构
 
@@ -65,7 +65,7 @@ npm run mock
     │   └── index.html
     └── package.json
 
-### H5请求跨域问题
+### ==H5请求跨域问题==
 
 config/dev.js
 ```
@@ -155,23 +155,13 @@ export default (options = { method: 'GET', data: {} }) => {
 ```
 
 
-# 文档
+# ==文档==
 
-### Taro开发文档
 
-[Taro](https://nervjs.github.io/taro/docs/README.html)
-
-### dva开发文档地址
-
-[Dva](https://dvajs.com/)
-
-### 小程序开发文档
-
-[小程序](https://mp.weixin.qq.com/debug/wxadoc/dev/)
-
-### Mock使用文档
-
-[Mock](https://github.com/nuysoft/Mock/wiki/Getting-Started)
+- [Taro开发文档](https://nervjs.github.io/taro/docs/README.html)
+- [Dva开发文档](https://dvajs.com/)
+- [小程序开发文档](https://mp.weixin.qq.com/debug/wxadoc/dev/)
+- [Mock使用文档](https://github.com/nuysoft/Mock/wiki/Getting-Started)
 
 
 
