@@ -1,8 +1,8 @@
-# ==技术栈==
+# 技术栈
 
 React + Taro + Dva + Sass + ES6/ES7 + Mockjs
 
-## ==项目运行==
+## 项目运行
 
 ```
 # 全局安装taro脚手架
@@ -23,13 +23,13 @@ npm run mock
 
 ```
 
-## ==适配进度==
+## 适配进度
 
 - [x] 微信小程序 -- 完美适配
 - [x] H5 -- 完美适配
 
 
-# ==业务介绍==
+# 业务介绍
 
 目录结构
 
@@ -65,11 +65,11 @@ npm run mock
     │   └── index.html
     └── package.json
 
-### ==H5请求跨域问题==
+### H5请求跨域问题
 
 config/dev.js
 ```
-const isH5 = process.env.CLIENT_ENV === 'h5'
+const isH5 = process.env.CLIENT_ENV = 'h5'
 // 你自己的请求域名
 const HOST = '"http://localhost:3721"'; 
 
@@ -117,7 +117,7 @@ import { baseUrl, noConsole } from './config';
 export default (options = { method: 'GET', data: {} }) => {
   // 根据不同的环境来补全请求地址
   let Url = ''
-  if (Taro.getEnv() === 'WEB') {
+  if (Taro.getEnv() = 'WEB') {
     Url = `/${options.url}`
   } else {
     Url = `${baseUrl}${options.url}`
@@ -138,7 +138,7 @@ export default (options = { method: 'GET', data: {} }) => {
       if (!noConsole) {
         console.log(`${new Date().toLocaleString()}【 M=${Url} 】【接口响应：】`, res.data);
       }
-      if (data.statusCode !== '200') {
+      if (data.statusCode ! '200') {
         Taro.showToast({
           title: `网络错误！`,
           icon: 'none',
@@ -155,7 +155,7 @@ export default (options = { method: 'GET', data: {} }) => {
 ```
 
 
-# ==文档==
+# 文档
 
 
 - [Taro开发文档](https://nervjs.github.io/taro/docs/README.html)
