@@ -71,7 +71,7 @@ config/dev.js
 ```
 const isH5 = process.env.CLIENT_ENV === 'h5'
 // 你自己的请求域名
-const HOST = '"http://192.168.18.105:3721"'; 
+const HOST = '"http://localhost:3721"'; 
 
 module.exports = {
   env: {
@@ -159,19 +159,19 @@ export default (options = { method: 'GET', data: {} }) => {
 
 ### Taro开发文档
 
-> https://nervjs.github.io/taro/docs/README.html
+[Taro](https://nervjs.github.io/taro/docs/README.html)
 
 ### dva开发文档地址
 
-> https://dvajs.com/
+[Dva](https://dvajs.com/)
 
 ### 小程序开发文档
 
-> https://mp.weixin.qq.com/debug/wxadoc/dev/
+[小程序](https://mp.weixin.qq.com/debug/wxadoc/dev/)
 
 ### Mock使用文档
 
-> https://github.com/nuysoft/Mock/wiki/Getting-Started
+[Mock](https://github.com/nuysoft/Mock/wiki/Getting-Started)
 
 
 
