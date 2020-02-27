@@ -4,6 +4,9 @@ const Api = {
   },
   book: {
     list: `api/book/list`
+  },
+  dynamic: {
+    list: `api/dynamic/list`
   }
 }
 

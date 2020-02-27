@@ -5,7 +5,8 @@ export default {
   state: {
     BookCases: '',
     current: 1,
-    loadMore: true
+    loadMore: true,
+    BookLetters: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
   },
   effects: {
     * list({ payload = {} }, { call }) {

@@ -8,6 +8,7 @@ import PageBook from './PageBook';
 import LoadMore from './LoadMore';
 import UserComments from './UserComments';
 import BookSift from './BookSift';
+import RightNav from './RightNav';
 
 export {
   SearchBar,
@@ -19,5 +20,6 @@ export {
   PageBook,
   LoadMore,
   UserComments,
-  BookSift
+  BookSift,
+  RightNav
 }

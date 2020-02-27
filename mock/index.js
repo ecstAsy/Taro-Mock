@@ -1,6 +1,7 @@
 const delay = require('mocker-api/utils/delay'); // 延时 模拟请求异步问题
 const mockjs = require('mockjs');
 const BookData = require('./book');
+const DynamicData = require('./dynamic');
 
 /**
 |--------------------------------------------------
@@ -56,6 +57,22 @@ const data = {
   'GET /api/book/list': (req, res) => {
     const { query } = req;
     const { current, pageSize, dataSource } = Query(query, BookData.data.lists);
+    res.status('200').json({
+      data: {
+        lists: dataSource.slice((current - 1) * pageSize, current * pageSize),
+        pageInfo: {
+          current: Number(current),
+          pageSize: Number(pageSize),
+          total: dataSource.length,
+          maxCurrent: dataSource.length % pageSize >= 0 ? Math.ceil(dataSource.length / pageSize) : dataSource.data.length / pageSize
+        }
+      },
+      statusCode: '200'
+    })
+  },
+  'GET /api/dynamic/list': (req, res) => {
+    const { query } = req;
+    const { current, pageSize, dataSource } = Query(query, DynamicData.data.lists);
     res.status('200').json({
       data: {
         lists: dataSource.slice((current - 1) * pageSize, current * pageSize),

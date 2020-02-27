@@ -1,0 +1,24 @@
+@import "../../styles/base.scss";
+@import "../../styles/mixin.scss";
+.rightNav {
+  width: 42px;
+  text-align: center;
+  position: fixed;
+  right: 20px;
+  top: 60px;
+  background: none;
+  z-index: 99;
+  padding: 20px 0;
+  border-radius: 21px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(151, 151, 151, 0.5);
+  .zimu {
+    width: 40px;
+    @include hl(40px);
+    @include sc(28px, #fff);
+    font-weight: 400;
+    &.active {
+      color: #ff8b00;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import Taro, { Component } from '@tarojs/taro';
 import { connect } from '@tarojs/redux';
 import { View } from '@tarojs/components';
-import { SearchBar, PageBook, PageSpace, LoadMore } from '../../components';
+import { SearchBar, PageBook, PageSpace, LoadMore, RightNav } from '../../components';
 import './index.scss';
 
 @connect(({ common, bookcase, loading }) => ({ ...common, ...bookcase, ...loading }))
@@ -39,7 +39,7 @@ export default class BookCase extends Component {
   }
 
   render() {
-    const { BookCases, effects } = this.props;
+    const { BookCases, effects, BookLetters } = this.props;
     return (
       <View className='page-book-case'>
         <SearchBar />
@@ -51,6 +51,7 @@ export default class BookCase extends Component {
             )
           }
         </View>
+        <RightNav data={BookLetters} activeId='A' />
         <LoadMore loading={effects['bookcase/list']} />
       </View>
     )

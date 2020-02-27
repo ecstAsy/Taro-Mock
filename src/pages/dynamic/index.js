@@ -12,6 +12,17 @@ export default class Dynamic extends Component {
     navigationBarTitleText: '动态'
   }
 
+  componentDidMount = () => {
+    const data = this.props.dispatch({
+      type: 'dynamic/sift',
+      payload: {
+        current: 1,
+        pageSize: 6
+      }
+    })
+    console.log(data)
+  }
+
   handleTab = async id => {
     await Taro.showToast({
       icon: 'loading',

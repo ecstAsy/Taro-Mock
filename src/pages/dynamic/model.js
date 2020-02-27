@@ -1,3 +1,5 @@
+import { list } from './service';
+
 export default {
   namespace: 'dynamic',
   state: {
@@ -8,7 +10,10 @@ export default {
     ActiveId: 1
   },
   effects: {
-
+    * sift({ payload = {} }, { call }) {
+      const { data } = yield call(list, payload);
+      return data
+    }
   },
   reducers: {
     save(state, { payload }) {
